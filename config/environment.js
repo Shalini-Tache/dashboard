@@ -6,6 +6,9 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    fingerprint: {
+      enabled: false
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -43,7 +46,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.rootURL = '/dashboard';
   }
 
   return ENV;

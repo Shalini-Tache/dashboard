@@ -1,5 +1,22 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+{{remove-spinner}}
 
-{{outlet}}
+<div class="legal-wrapper">
+  <div class="dashboard">
+    <h2>Roadmap</h2>
+
+    <p>If you were ever curious about what lies ahead for Ember.js, this page should provide the information you're looking for.</p>
+    <p>Here we will track the progress of the various initiatives that continuously shape Ember.js, from their birth as <strong><a href="https://github.com/emberjs/rfcs/pulls">RFCs</a></strong>, through <strong><a href="https://guides.emberjs.com/v2.9.0/configuring-ember/feature-flags/">Feature Flags</a></strong> and eventually into a <strong><a href="/builds">Release</a></strong>.</p>
+
+    {{#each groupedFeatures as |group|}}
+      <h2>{{group.value}}</h2>
+
+      {{#each group.items as |feature|}}
+        <div class="card">
+          <a href={{feature.rfc.url}}>#<{{feature.rfc.id}}</a>
+          <div class='feature-name'>{{feature.name}}</div>
+          <div>{{feature.description}}</div>
+        </div>
+      {{/each}}
+    {{/each}}
+  </div>
+</div>
