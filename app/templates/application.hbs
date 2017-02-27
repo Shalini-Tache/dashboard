@@ -11,11 +11,7 @@
       <h2>{{group.value}}</h2>
 
       {{#each group.items as |feature|}}
-        <div class="card">
-          <a href={{feature.rfc.url}}>#<{{feature.rfc.id}}</a>
-          <div class='feature-name'>{{feature.name}}</div>
-          <div>{{feature.description}}</div>
-        </div>
+        {{feature-card feature=feature}}
       {{/each}}
     {{/each}}
   </div>
